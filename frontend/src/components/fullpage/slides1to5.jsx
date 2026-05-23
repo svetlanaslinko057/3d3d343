@@ -53,10 +53,10 @@ export function SlideProduction({ active, goTo }) {
             whileInView="show"
             viewport={{ once: true, amount: 0.15 }}
             exit={{ opacity: 0 }}
-            className="flex-1 min-h-0 grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-12 xl:gap-16 items-stretch"
+            className="flex-1 min-h-0 grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-12 xl:gap-16 items-stretch lg:items-center"
           >
             {/* LEFT — editorial copy */}
-            <div className="min-w-0 flex flex-col h-full">
+            <div className="min-w-0 flex flex-col lg:justify-center lg:h-full">
               <motion.div variants={item} className="inline-flex self-start items-center gap-2 rounded-[10px] px-3 py-1.5 bg-[#111111] text-white text-[11.5px] sm:text-[12px] font-semibold tracking-[0.02em]">
                 <Factory className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
                 <span>Виробництво пневмопідвіски · Україна · 20 років</span>
@@ -92,12 +92,12 @@ export function SlideProduction({ active, goTo }) {
                 ))}
               </motion.ul>
 
-              <motion.div variants={item} className="mt-auto pt-6 lg:pt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <motion.div variants={item} className="mt-5 lg:mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 lg:gap-3">
                 <a
                   href={telegramUrl(settings)}
                   target="_blank"
                   rel="noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 h-14 lg:h-[60px] px-6 sm:px-7 rounded-[10px] text-[14px] sm:text-[15px] font-semibold bg-[#111111] text-white hover:bg-[#000000] transition-colors cta-lift w-full sm:w-auto"
+                  className="group relative inline-flex items-center justify-center gap-3 h-12 lg:h-[54px] px-5 sm:px-6 rounded-[10px] text-[14px] sm:text-[15px] font-semibold bg-[#111111] text-white hover:bg-[#000000] transition-colors cta-lift w-full sm:w-auto"
                   data-testid="hero-primary-cta"
                 >
                   <span>Отримати прайс від виробника</span>
@@ -108,7 +108,7 @@ export function SlideProduction({ active, goTo }) {
                 <button
                   type="button"
                   onClick={() => goTo(2)}
-                  className="inline-flex items-center justify-center gap-2 h-14 lg:h-[60px] px-6 rounded-[10px] text-[13.5px] sm:text-[14.5px] font-medium bg-transparent text-[#111111] border border-[#111111]/20 hover:bg-[#111111] hover:text-white transition-colors micro-lift"
+                  className="inline-flex items-center justify-center gap-2 h-12 lg:h-[54px] px-5 lg:px-6 rounded-[10px] text-[13.5px] sm:text-[14.5px] font-medium bg-transparent text-[#111111] border border-[#111111]/20 hover:bg-[#111111] hover:text-white transition-colors micro-lift"
                   data-testid="hero-secondary-cta"
                 >
                   Переглянути продукцію
@@ -277,10 +277,10 @@ export function SlideProblem({ active, goTo }) {
             whileInView="show"
             viewport={{ once: true, amount: 0.15 }}
             exit={{ opacity: 0 }}
-            className="flex-1 min-h-0 grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-10 xl:gap-14 items-stretch relative"
+            className="flex-1 min-h-0 grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-10 xl:gap-14 items-stretch lg:items-center relative"
           >
             {/* LEFT: editorial copy + capabilities + stats + CTAs */}
-            <div className="flex flex-col h-full min-w-0">
+            <div className="flex flex-col lg:justify-center lg:h-full min-w-0">
               <motion.div
                 variants={item}
                 className="inline-flex self-start items-center gap-2 rounded-[10px] bg-white/10 border border-white/15 text-white text-[11px] font-bold tracking-[0.16em] uppercase px-3 py-2"
@@ -365,12 +365,12 @@ export function SlideProblem({ active, goTo }) {
               </motion.ul>
 
               {/* CTAs */}
-              <motion.div variants={item} className="mt-auto pt-6 lg:pt-8 flex flex-col sm:flex-row gap-3">
+              <motion.div variants={item} className="mt-5 lg:mt-6 flex flex-col sm:flex-row gap-2.5 lg:gap-3">
                 <a
                   href={telegramUrl(settings)}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 h-14 lg:h-[58px] px-6 rounded-[12px] text-[14px] font-semibold bg-white text-[#111111] hover:bg-[#F1F1EF] transition-colors cta-lift"
+                  className="inline-flex items-center justify-center gap-2 h-12 lg:h-[52px] px-5 lg:px-6 rounded-[12px] text-[14px] font-semibold bg-white text-[#111111] hover:bg-[#F1F1EF] transition-colors cta-lift"
                   data-testid="slide-manufacturing-cta"
                 >
                   Отримати прайс від виробника <ArrowRight className="h-4 w-4" />
@@ -378,7 +378,7 @@ export function SlideProblem({ active, goTo }) {
                 <button
                   type="button"
                   onClick={() => goTo(2)}
-                  className="inline-flex items-center justify-center gap-2 h-14 lg:h-[58px] px-6 rounded-[12px] text-[13px] font-medium bg-white/8 text-white border border-white/15 hover:bg-white/15 transition-colors micro-lift"
+                  className="inline-flex items-center justify-center gap-2 h-12 lg:h-[52px] px-5 lg:px-6 rounded-[12px] text-[13px] font-medium bg-white/8 text-white border border-white/15 hover:bg-white/15 transition-colors micro-lift"
                 >
                   Продукція <ArrowDown className="h-4 w-4" />
                 </button>
