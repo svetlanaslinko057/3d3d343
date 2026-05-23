@@ -280,7 +280,7 @@ export function SlideProblem({ active, goTo }) {
             className="flex-1 min-h-0 grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-10 xl:gap-14 items-stretch relative"
           >
             {/* LEFT: editorial copy + capabilities + stats + CTAs */}
-            <div className="flex flex-col lg:h-full min-w-0">
+            <div className="flex flex-col lg:h-full lg:justify-between min-w-0">
               <motion.div
                 variants={item}
                 className="inline-flex self-start items-center gap-2 rounded-[10px] bg-white/10 border border-white/15 text-white text-[11px] font-bold tracking-[0.16em] uppercase px-3 py-2"
@@ -292,7 +292,7 @@ export function SlideProblem({ active, goTo }) {
 
               <motion.h2
                 variants={item}
-                className="mt-4 font-heading font-semibold text-white text-[28px] sm:text-[40px] lg:text-[50px] xl:text-[58px] leading-[1.02] tracking-tight [text-wrap:balance]"
+                className="mt-4 lg:mt-0 font-heading font-semibold text-white text-[28px] sm:text-[40px] lg:text-[50px] xl:text-[58px] leading-[1.02] tracking-tight [text-wrap:balance]"
                 data-testid="slide-manufacturing-title"
               >
                 Виробництво <span className="text-white/55">повного циклу</span>
@@ -303,13 +303,13 @@ export function SlideProblem({ active, goTo }) {
 
               <motion.p
                 variants={item}
-                className="mt-4 lg:mt-5 text-[13.5px] lg:text-[15px] text-[#C7C7C7] max-w-xl leading-[1.55]"
+                className="mt-4 lg:mt-0 text-[13.5px] lg:text-[15px] text-[#C7C7C7] max-w-xl leading-[1.55]"
               >
                 Свій цех, власні інженери, європейська сировина та контроль якості на кожному етапі. Серійне виготовлення для опту та дилерів, індивідуальна робота під OEM — пряма робота з виробником без посередників.
               </motion.p>
 
               {/* Capability cards — compact 2×2 */}
-              <motion.ul variants={item} className="mt-5 lg:mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4 max-w-xl">
+              <motion.ul variants={item} className="mt-5 lg:mt-0 grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4 max-w-xl">
                 {CAPABILITIES.map((c, idx) => (
                   <motion.li
                     key={c.title}
@@ -336,7 +336,7 @@ export function SlideProblem({ active, goTo }) {
               {/* Stats strip — same 20 / 30+ / OEM */}
               <motion.div
                 variants={item}
-                className="mt-5 lg:mt-5 grid grid-cols-3 gap-px rounded-[18px] overflow-hidden border border-white/10 bg-white/5 max-w-xl"
+                className="mt-5 lg:mt-0 grid grid-cols-3 gap-px rounded-[18px] overflow-hidden border border-white/10 bg-white/5 max-w-xl"
                 data-testid="slide-manufacturing-stats"
               >
                 {PRODUCTION_STATS.map((s) => (
@@ -352,7 +352,7 @@ export function SlideProblem({ active, goTo }) {
               </motion.div>
 
               {/* Quick trust pills */}
-              <motion.ul variants={item} className="mt-4 lg:mt-4 flex flex-wrap gap-2 lg:gap-2">
+              <motion.ul variants={item} className="mt-4 lg:mt-0 flex flex-wrap gap-2 lg:gap-2">
                 {PROD_PILLS.map((r) => (
                   <li
                     key={r.title}
@@ -365,7 +365,7 @@ export function SlideProblem({ active, goTo }) {
               </motion.ul>
 
               {/* CTAs */}
-              <motion.div variants={item} className="mt-5 lg:mt-auto lg:pt-6 flex flex-col sm:flex-row gap-2.5 lg:gap-3">
+              <motion.div variants={item} className="mt-5 lg:mt-0 flex flex-col sm:flex-row gap-2.5 lg:gap-3">
                 <a
                   href={telegramUrl(settings)}
                   target="_blank"
@@ -385,76 +385,92 @@ export function SlideProblem({ active, goTo }) {
               </motion.div>
             </div>
 
-            {/* RIGHT: photo composition — 1 hero + 2 small (cell · product · QC) */}
+            {/* RIGHT: photo composition — 4 balanced images in 2×2 grid */}
             <motion.div
               variants={scaleUp}
-              className="relative hidden lg:grid grid-cols-3 grid-rows-2 gap-2.5 lg:gap-3 h-full min-h-0"
+              className="relative hidden lg:grid grid-cols-2 grid-rows-2 gap-3 lg:gap-3.5 h-full min-h-0"
               data-testid="slide-manufacturing-photos"
             >
-              {/* Big hero photo — workshop / Київ */}
-              <div className="relative col-span-2 row-span-2 rounded-[22px] overflow-hidden bg-[#0B0B0B] border border-white/8 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.7)]">
+              {/* TL — Workshop / Київ */}
+              <div className="relative rounded-[18px] overflow-hidden bg-[#0B0B0B] border border-white/8 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)]">
                 <img
                   src={imageUrl("/api/photos/IMG_7347.JPG")}
                   alt="Цех виробництва пневмоподушок у Києві"
                   className="absolute inset-0 w-full h-full object-cover img-neutral"
                   loading="eager"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/30" />
-
-                <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-white/95 border border-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#111111] shadow-sm">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/25" />
+                <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-white/95 border border-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#111111] shadow-sm">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#111111]" />
                   Цех · Київ
                 </span>
-
-                <span className="absolute top-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-black/55 backdrop-blur-md border border-white/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
-                  <Factory className="h-3 w-3 text-white" strokeWidth={2.4} />
-                  Повний цикл
-                </span>
-
-                <div className="absolute inset-x-0 bottom-0 px-4 lg:px-5 pb-3.5 lg:pb-4 pt-10 text-white">
+                <div className="absolute inset-x-0 bottom-0 px-4 pb-3 pt-8 text-white">
                   <div className="text-[10px] uppercase tracking-[0.14em] text-white/70 font-semibold">Виробництво</div>
-                  <div className="font-heading font-semibold text-[17px] xl:text-[20px] tracking-tight leading-tight mt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+                  <div className="font-heading font-semibold text-[14px] xl:text-[16px] tracking-tight leading-tight mt-0.5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
                     Повний цикл під одним дахом
                   </div>
                 </div>
               </div>
 
-              {/* Small: product closeup */}
-              <div className="relative rounded-[16px] overflow-hidden bg-[#111111] border border-white/8">
+              {/* TR — Серійна продукція */}
+              <div className="relative rounded-[18px] overflow-hidden bg-[#111111] border border-white/8 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)]">
                 <img
                   src={imageUrl("/api/photos/IMG_7339.JPG")}
                   alt="Пневмоподушка серії RP — продукція власного виробництва"
                   className="absolute inset-0 w-full h-full object-cover img-neutral"
                   loading="eager"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
-                <span className="absolute top-2.5 left-2.5 inline-flex items-center gap-1 rounded-full bg-white/95 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-[#111111]">
-                  <Check className="h-2.5 w-2.5 text-[#16A34A]" strokeWidth={3} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-white/95 border border-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#111111] shadow-sm">
+                  <Check className="h-3 w-3 text-[#16A34A]" strokeWidth={3} />
                   Продукція
                 </span>
-                <div className="absolute bottom-2.5 left-2.5 right-2.5 text-white">
-                  <div className="font-heading font-semibold text-[12px] xl:text-[13.5px] tracking-tight leading-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
+                <div className="absolute inset-x-0 bottom-0 px-4 pb-3 pt-8 text-white">
+                  <div className="text-[10px] uppercase tracking-[0.14em] text-white/70 font-semibold">Серія</div>
+                  <div className="font-heading font-semibold text-[14px] xl:text-[16px] tracking-tight leading-tight mt-0.5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
                     Серійна модель RP-2010
                   </div>
                 </div>
               </div>
 
-              {/* Small: QC / install */}
-              <div className="relative rounded-[16px] overflow-hidden bg-[#111111] border border-white/8">
+              {/* BL — Контроль якості / QC */}
+              <div className="relative rounded-[18px] overflow-hidden bg-[#111111] border border-white/8 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)]">
                 <img
                   src={imageUrl("/api/photos/IMG_7337.JPG")}
-                  alt="Контроль якості та збирання у цеху"
+                  alt="Контроль якості та опресовка до 16 бар"
                   className="absolute inset-0 w-full h-full object-cover img-neutral"
                   loading="eager"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
-                <span className="absolute top-2.5 left-2.5 inline-flex items-center gap-1 rounded-full bg-white/95 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-[#111111]">
-                  <Gauge className="h-2.5 w-2.5 text-[#111111]" strokeWidth={2.4} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-white/95 border border-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#111111] shadow-sm">
+                  <Gauge className="h-3 w-3 text-[#111111]" strokeWidth={2.4} />
                   QC · 16 бар
                 </span>
-                <div className="absolute bottom-2.5 left-2.5 right-2.5 text-white">
-                  <div className="font-heading font-semibold text-[12px] xl:text-[13.5px] tracking-tight leading-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
+                <div className="absolute inset-x-0 bottom-0 px-4 pb-3 pt-8 text-white">
+                  <div className="text-[10px] uppercase tracking-[0.14em] text-white/70 font-semibold">Тестування</div>
+                  <div className="font-heading font-semibold text-[14px] xl:text-[16px] tracking-tight leading-tight mt-0.5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
                     Контроль якості партії
+                  </div>
+                </div>
+              </div>
+
+              {/* BR — OEM партії / Збирання */}
+              <div className="relative rounded-[18px] overflow-hidden bg-[#111111] border border-white/8 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)]">
+                <img
+                  src={imageUrl("/api/photos/IMG_7344.JPG")}
+                  alt="OEM партії — індивідуальне виготовлення під замовлення"
+                  className="absolute inset-0 w-full h-full object-cover img-neutral"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-white/95 border border-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#111111] shadow-sm">
+                  <Cog className="h-3 w-3 text-[#111111]" strokeWidth={2.4} />
+                  OEM · ТЗ
+                </span>
+                <div className="absolute inset-x-0 bottom-0 px-4 pb-3 pt-8 text-white">
+                  <div className="text-[10px] uppercase tracking-[0.14em] text-white/70 font-semibold">Партії під марку</div>
+                  <div className="font-heading font-semibold text-[14px] xl:text-[16px] tracking-tight leading-tight mt-0.5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
+                    Виготовлення під ТЗ
                   </div>
                 </div>
               </div>
