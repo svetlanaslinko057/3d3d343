@@ -277,10 +277,10 @@ export function SlideProblem({ active, goTo }) {
             whileInView="show"
             viewport={{ once: true, amount: 0.15 }}
             exit={{ opacity: 0 }}
-            className="flex-1 min-h-0 grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-10 xl:gap-14 items-stretch lg:items-center relative"
+            className="flex-1 min-h-0 grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-10 xl:gap-14 items-stretch lg:items-start relative"
           >
             {/* LEFT: editorial copy + capabilities + stats + CTAs */}
-            <div className="flex flex-col lg:justify-center lg:h-full min-w-0">
+            <div className="flex flex-col min-w-0">
               <motion.div
                 variants={item}
                 className="inline-flex self-start items-center gap-2 rounded-[10px] bg-white/10 border border-white/15 text-white text-[11px] font-bold tracking-[0.16em] uppercase px-3 py-2"
@@ -303,13 +303,13 @@ export function SlideProblem({ active, goTo }) {
 
               <motion.p
                 variants={item}
-                className="mt-4 lg:mt-5 text-[13.5px] lg:text-[15px] text-[#C7C7C7] max-w-xl leading-[1.55]"
+                className="mt-3 lg:mt-3 text-[13.5px] lg:text-[14px] text-[#C7C7C7] max-w-xl leading-[1.5]"
               >
                 Свій цех, власні інженери, європейська сировина та контроль якості на кожному етапі. Серійне виготовлення для опту та дилерів, індивідуальна робота під OEM — пряма робота з виробником без посередників.
               </motion.p>
 
               {/* Capability cards — compact 2×2 */}
-              <motion.ul variants={item} className="mt-5 lg:mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4 max-w-xl">
+              <motion.ul variants={item} className="mt-4 lg:mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-3 max-w-xl">
                 {CAPABILITIES.map((c, idx) => (
                   <motion.li
                     key={c.title}
@@ -336,15 +336,15 @@ export function SlideProblem({ active, goTo }) {
               {/* Stats strip — same 20 / 30+ / OEM */}
               <motion.div
                 variants={item}
-                className="mt-5 lg:mt-5 grid grid-cols-3 gap-px rounded-[18px] overflow-hidden border border-white/10 bg-white/5 max-w-xl"
+                className="mt-4 lg:mt-4 grid grid-cols-3 gap-px rounded-[18px] overflow-hidden border border-white/10 bg-white/5 max-w-xl"
                 data-testid="slide-manufacturing-stats"
               >
                 {PRODUCTION_STATS.map((s) => (
-                  <div key={s.label} className="bg-[#0B0B0B] px-4 py-4 lg:px-4 lg:py-3 flex flex-col">
-                    <div className="font-heading font-semibold text-white text-[24px] lg:text-[24px] leading-none tracking-tight">
+                  <div key={s.label} className="bg-[#0B0B0B] px-4 py-3 lg:px-4 lg:py-2.5 flex flex-col">
+                    <div className="font-heading font-semibold text-white text-[24px] lg:text-[22px] leading-none tracking-tight">
                       {s.value}
                     </div>
-                    <div className="mt-2 text-[10.5px] lg:text-[10.5px] text-[#A0A0A0] uppercase tracking-[0.1em] font-semibold leading-snug">
+                    <div className="mt-1.5 text-[10.5px] lg:text-[10.5px] text-[#A0A0A0] uppercase tracking-[0.1em] font-semibold leading-snug">
                       {s.label}
                     </div>
                   </div>
@@ -352,7 +352,7 @@ export function SlideProblem({ active, goTo }) {
               </motion.div>
 
               {/* Quick trust pills */}
-              <motion.ul variants={item} className="mt-4 lg:mt-4 flex flex-wrap gap-2 lg:gap-2">
+              <motion.ul variants={item} className="mt-3 lg:mt-3 flex flex-wrap gap-2 lg:gap-2">
                 {PROD_PILLS.map((r) => (
                   <li
                     key={r.title}
@@ -365,7 +365,7 @@ export function SlideProblem({ active, goTo }) {
               </motion.ul>
 
               {/* CTAs */}
-              <motion.div variants={item} className="mt-5 lg:mt-6 flex flex-col sm:flex-row gap-2.5 lg:gap-3">
+              <motion.div variants={item} className="mt-4 lg:mt-4 flex flex-col sm:flex-row gap-2.5 lg:gap-3">
                 <a
                   href={telegramUrl(settings)}
                   target="_blank"
@@ -388,7 +388,7 @@ export function SlideProblem({ active, goTo }) {
             {/* RIGHT: photo composition — 1 hero + 2 small (cell · product · QC) */}
             <motion.div
               variants={scaleUp}
-              className="relative hidden lg:grid grid-cols-3 grid-rows-2 gap-2.5 lg:gap-3 h-full min-h-0"
+              className="relative hidden lg:grid grid-cols-3 grid-rows-2 gap-2.5 lg:gap-3 h-full max-h-[68vh] min-h-0"
               data-testid="slide-manufacturing-photos"
             >
               {/* Big hero photo — workshop / Київ */}
