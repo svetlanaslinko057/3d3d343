@@ -277,10 +277,10 @@ export function SlideProblem({ active, goTo }) {
             whileInView="show"
             viewport={{ once: true, amount: 0.15 }}
             exit={{ opacity: 0 }}
-            className="flex-1 min-h-0 grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-10 xl:gap-14 items-stretch lg:items-center relative"
+            className="flex-1 min-h-0 grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-10 xl:gap-14 items-stretch relative"
           >
             {/* LEFT: editorial copy + capabilities + stats + CTAs */}
-            <div className="flex flex-col lg:justify-center lg:h-full min-w-0">
+            <div className="flex flex-col lg:h-full min-w-0">
               <motion.div
                 variants={item}
                 className="inline-flex self-start items-center gap-2 rounded-[10px] bg-white/10 border border-white/15 text-white text-[11px] font-bold tracking-[0.16em] uppercase px-3 py-2"
@@ -365,7 +365,7 @@ export function SlideProblem({ active, goTo }) {
               </motion.ul>
 
               {/* CTAs */}
-              <motion.div variants={item} className="mt-5 lg:mt-6 flex flex-col sm:flex-row gap-2.5 lg:gap-3">
+              <motion.div variants={item} className="mt-5 lg:mt-auto lg:pt-6 flex flex-col sm:flex-row gap-2.5 lg:gap-3">
                 <a
                   href={telegramUrl(settings)}
                   target="_blank"
