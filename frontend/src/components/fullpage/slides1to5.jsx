@@ -229,22 +229,22 @@ const CAPABILITIES = [
   {
     icon: Factory,
     title: "Власний цех у Києві",
-    desc: "Повний цикл: вулканізація, збирання, тестування, відвантаження.",
+    desc: "Повний цикл: вулканізація, збирання, тестування.",
   },
   {
     icon: Layers,
     title: "Європейська сировина",
-    desc: "Гумовий корд, фітинги, компоненти — тільки перевірені матеріали.",
+    desc: "Корд, фітинги — тільки перевірені матеріали.",
   },
   {
     icon: Gauge,
     title: "QC на кожному виробі",
-    desc: "Опресовка до 16 бар, ресурсні випробування, протоколи партії.",
+    desc: "Опресовка 16 бар, ресурсні випробування.",
   },
   {
     icon: Cog,
     title: "Серія + OEM під ТЗ",
-    desc: "Стандартні типорозміри та індивідуальне виготовлення під замовника.",
+    desc: "Стандартні розміри та виготовлення під ТЗ.",
   },
 ];
 
@@ -292,24 +292,24 @@ export function SlideProblem({ active, goTo }) {
 
               <motion.h2
                 variants={item}
-                className="mt-4 lg:mt-0 font-heading font-semibold text-white text-[28px] sm:text-[40px] lg:text-[50px] xl:text-[58px] leading-[1.02] tracking-tight [text-wrap:balance]"
+                className="mt-4 lg:mt-3 font-heading font-semibold text-white text-[28px] sm:text-[40px] lg:text-[44px] xl:text-[54px] leading-[1.04] tracking-tight [text-wrap:balance]"
                 data-testid="slide-manufacturing-title"
               >
                 Виробництво <span className="text-white/55">повного циклу</span>
-                <span className="block mt-1 text-[18px] sm:text-[22px] lg:text-[26px] xl:text-[30px] font-medium text-white/70 tracking-tight">
+                <span className="block mt-1 text-[18px] sm:text-[22px] lg:text-[22px] xl:text-[28px] font-medium text-white/70 tracking-tight">
                   <span className="text-white">20 років</span> власного виробництва в Україні
                 </span>
               </motion.h2>
 
               <motion.p
                 variants={item}
-                className="mt-4 lg:mt-0 text-[13.5px] lg:text-[15px] text-[#C7C7C7] max-w-xl leading-[1.55]"
+                className="mt-4 lg:mt-4 text-[13.5px] lg:text-[14px] text-[#C7C7C7] max-w-xl leading-[1.55]"
               >
                 Свій цех, власні інженери, європейська сировина та контроль якості на кожному етапі. Серійне виготовлення для опту та дилерів, індивідуальна робота під OEM — пряма робота з виробником без посередників.
               </motion.p>
 
               {/* Capability cards — compact 2×2 */}
-              <motion.ul variants={item} className="mt-5 lg:mt-0 grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4 max-w-xl">
+              <motion.ul variants={item} className="mt-5 lg:mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-3.5 max-w-xl">
                 {CAPABILITIES.map((c, idx) => (
                   <motion.li
                     key={c.title}
@@ -336,12 +336,12 @@ export function SlideProblem({ active, goTo }) {
               {/* Stats strip — same 20 / 30+ / OEM */}
               <motion.div
                 variants={item}
-                className="mt-5 lg:mt-0 grid grid-cols-3 gap-px rounded-[18px] overflow-hidden border border-white/10 bg-white/5 max-w-xl"
+                className="mt-5 lg:mt-5 grid grid-cols-3 gap-px rounded-[18px] overflow-hidden border border-white/10 bg-white/5 max-w-xl"
                 data-testid="slide-manufacturing-stats"
               >
                 {PRODUCTION_STATS.map((s) => (
                   <div key={s.label} className="bg-[#0B0B0B] px-4 py-4 lg:px-4 lg:py-3 flex flex-col">
-                    <div className="font-heading font-semibold text-white text-[24px] lg:text-[24px] leading-none tracking-tight">
+                    <div className="font-heading font-semibold text-white text-[24px] lg:text-[22px] leading-none tracking-tight">
                       {s.value}
                     </div>
                     <div className="mt-2 text-[10.5px] lg:text-[10.5px] text-[#A0A0A0] uppercase tracking-[0.1em] font-semibold leading-snug">
@@ -352,7 +352,7 @@ export function SlideProblem({ active, goTo }) {
               </motion.div>
 
               {/* Quick trust pills */}
-              <motion.ul variants={item} className="mt-4 lg:mt-0 flex flex-wrap gap-2 lg:gap-2">
+              <motion.ul variants={item} className="mt-4 lg:mt-4 flex flex-wrap gap-2 lg:gap-2">
                 {PROD_PILLS.map((r) => (
                   <li
                     key={r.title}
@@ -365,7 +365,7 @@ export function SlideProblem({ active, goTo }) {
               </motion.ul>
 
               {/* CTAs */}
-              <motion.div variants={item} className="mt-5 lg:mt-0 flex flex-col sm:flex-row gap-2.5 lg:gap-3">
+              <motion.div variants={item} className="mt-5 lg:mt-5 flex flex-col sm:flex-row gap-2.5 lg:gap-3">
                 <a
                   href={telegramUrl(settings)}
                   target="_blank"
