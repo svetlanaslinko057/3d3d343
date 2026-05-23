@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 import FullPage from "@/components/fullpage/FullPage";
 import MobileStack from "@/components/fullpage/MobileStack";
 import { useIsMobile } from "@/hooks/use-is-mobile";
@@ -13,16 +13,12 @@ import {
 } from "@/components/fullpage/slides6to10";
 
 // 5 slides — production-first / B2B (опт-first) funnel.
-// Phase 6.3: merged former slides 02 (Виробництво повного циклу) and 04
-// (20 років власного виробництва) into one comprehensive Manufacturing slide.
-// Result: Hero → Виробництво (повний цикл · 20 років · photos) →
-// Продукція + Кейси → Опт і партнери → Прайс.
 const SLIDES = [
-  SlideProduction,         // 01 — Hero
-  SlideProblem,            // 02 — Виробництво повного циклу · 20 років (merged)
-  SlideProductsAndCases,   // 03 — Продукція + Кейси
-  SlideTestimonials,       // 04 — Опт і партнери
-  SlideFinal,              // 05 — Прайс
+  SlideProduction,
+  SlideProblem,
+  SlideProductsAndCases,
+  SlideTestimonials,
+  SlideFinal,
 ];
 
 const LABELS = [
@@ -36,40 +32,37 @@ const LABELS = [
 export default function HomePage() {
   const isMobile = useIsMobile(768);
 
-  // useLayoutEffect runs BEFORE paint — guarantees that home-lock is never
-  // visible to the user on mobile (no FOUC where scroll is briefly locked).
+  // CRITICAL: Use useLayoutEffect to set body class BEFORE first paint.
+  // This avoids any flash of locked-scroll on mobile.
+  //
+  // On MOBILE (< 768px): body must scroll naturally. We don't need any
+  // home-lock class — MobileStack renders content in document flow.
+  //
+  // On DESKTOP (>= 768px): FullPage uses `fixed inset-0` which removes it
+  // from document flow, so body has no content height and naturally
+  // doesn't scroll. No home-lock needed for that either.
+  //
+  // We only ensure ALL legacy lock classes are CLEARED so stale state
+  // from a previous page (e.g. user navigated away then back) never
+  // leaves the body in a locked state.
   useLayoutEffect(() => {
     const html = document.documentElement;
     const body = document.body;
+    // Remove any legacy lock classes that may have been left over
+    html.classList.remove("home-lock");
+    body.classList.remove("home-lock");
+
     if (isMobile) {
-      html.classList.remove("home-lock");
-      body.classList.remove("home-lock");
       body.classList.add("mobile-home");
     } else {
       body.classList.remove("mobile-home");
-      body.classList.add("home-lock");
-      html.classList.add("home-lock");
     }
+
     return () => {
       html.classList.remove("home-lock");
       body.classList.remove("home-lock");
       body.classList.remove("mobile-home");
     };
-  }, [isMobile]);
-
-  // Extra safety: also clear stale classes on every render in case some
-  // external script (e.g. modal portal, route transition) re-added them.
-  useEffect(() => {
-    if (!isMobile) return;
-    const id = window.setInterval(() => {
-      if (document.documentElement.classList.contains("home-lock")) {
-        document.documentElement.classList.remove("home-lock");
-      }
-      if (document.body.classList.contains("home-lock")) {
-        document.body.classList.remove("home-lock");
-      }
-    }, 500);
-    return () => window.clearInterval(id);
   }, [isMobile]);
 
   if (isMobile) {
