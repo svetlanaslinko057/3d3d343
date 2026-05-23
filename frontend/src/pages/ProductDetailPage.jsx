@@ -168,7 +168,7 @@ export default function ProductDetailPage() {
             </div>
             <h3 className="mt-5 font-heading font-semibold text-xl tracking-tight">Запитати ціну</h3>
             <p className="text-sm text-[#666666] mt-1.5 leading-relaxed">
-              Підберемо під конкретне авто та підкажемо термін виготовлення.
+              Підберемо під вашу задачу та підкажемо термін виготовлення.
             </p>
             <div className="mt-5 flex flex-col gap-2">
               <a

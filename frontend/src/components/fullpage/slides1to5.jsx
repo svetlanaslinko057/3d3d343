@@ -30,7 +30,7 @@ import { ease, container, item, scaleUp } from "./slideMotion";
 const HERO_AUDIENCE = [
   { icon: Briefcase, label: "Опт" },
   { icon: Cog, label: "OEM" },
-  { icon: Wrench, label: "СТО / автомагазин" },
+  { icon: Wrench, label: "Інтегратори" },
   { icon: Tag, label: "Роздріб від виробника" },
 ];
 
@@ -76,7 +76,7 @@ export function SlideProduction({ active, goTo }) {
                 variants={item}
                 className="mt-3 sm:mt-4 text-[14px] sm:text-[15.5px] lg:text-[16.5px] text-[#333333] max-w-xl leading-[1.55]"
               >
-                20 років виробляємо пневмоподушки на власному виробництві. Працюємо з оптовими покупцями, OEM-замовниками, СТО та автомагазинами. Роздрібним клієнтам — пряма ціна від виробника без посередників.
+                20 років виробляємо пневмоподушки на власному виробництві. Працюємо з оптовими покупцями, OEM-замовниками та інтеграторами. Універсальна продукція напряму з заводу — куди й як інтегрувати, вирішує клієнт. Роздріб — пряма ціна від виробника без посередників.
               </motion.p>
 
               {/* Audience pills */}
@@ -509,18 +509,18 @@ export function SlideProblem({ active, goTo }) {
 // Top: categories + featured products · Bottom: real-world uses strip
 // ==================================================================
 const CASE_TAGS = [
-  { tag: "Sprinter", desc: "Серійна модель RP-2010", img: "/api/photos/IMG_7327.JPG" },
-  { tag: "Crafter", desc: "Комплект під замовлення", img: "/api/photos/IMG_7334.JPG" },
-  { tag: "Transit", desc: "Балонна серія в пружину", img: "/api/photos/IMG_7330.JPG" },
-  { tag: "Вантажні", desc: "Посилена пара ×2×3000 кг", img: "/api/photos/IMG_7352.JPG" },
-  { tag: "Причепи", desc: "OEM-партії для виробників", img: "/api/photos/IMG_7356.JPG" },
+  { tag: "Серійна", desc: "Стандартні типорозміри в наявності", img: "/api/photos/IMG_7327.JPG" },
+  { tag: "OEM партії", desc: "Виготовлення під технічне завдання", img: "/api/photos/IMG_7334.JPG" },
+  { tag: "Балонна серія", desc: "Балонна серія у пружину", img: "/api/photos/IMG_7330.JPG" },
+  { tag: "Посилена", desc: "Посилена пара ×2 · до 3000 кг", img: "/api/photos/IMG_7352.JPG" },
+  { tag: "Великі партії", desc: "Виробничі обсяги для дилерів", img: "/api/photos/IMG_7356.JPG" },
 ];
 
 const OTHER_USES_PILLS = [
-  "СТО · підйомники",
-  "Пневмопреси",
+  "Промислові преси",
   "Конвеєри",
-  "Кемпери",
+  "СТО · підйомники",
+  "Кемпери / RV",
   "Меблеве вир-во",
   "Віброізоляція",
 ];
@@ -659,11 +659,11 @@ export function SlideProductsAndCases({ active }) {
                     <div className="flex items-center gap-2 shrink-0">
                       <Sparkles className="h-4 w-4 text-[#F59E0B]" strokeWidth={2.2} />
                       <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-white">
-                        Не тільки авто
+                        Універсальні застосування
                       </span>
                     </div>
                     <p className="mt-2 text-[12px] lg:text-[11.5px] text-white/65 leading-snug shrink-0">
-                      Промислові застосування пневмоподушок:
+                      Інтеграція в будь-яку систему — рішення за клієнтом:
                     </p>
                     <ul className="mt-3 flex flex-wrap gap-1.5 lg:gap-1.5 flex-1 content-start">
                       {OTHER_USES_PILLS.map((u) => (

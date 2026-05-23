@@ -94,7 +94,7 @@ export default function CatalogPage() {
                 type="search"
                 value={q}
                 onChange={(e) => setParam("q", e.target.value)}
-                placeholder="Назва або авто"
+                placeholder="Назва або типорозмір"
                 className="w-full h-11 pl-9 pr-3 rounded-[12px] border border-[#E7E7E7] bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#111111]"
                 data-testid="catalog-search-input"
               />

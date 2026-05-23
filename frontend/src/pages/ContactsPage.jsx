@@ -136,7 +136,7 @@ export default function ContactsPage() {
             />
             <textarea
               rows={4}
-              placeholder="Марка і модель авто / задача"
+              placeholder="Опис задачі / типорозмір / обсяг партії"
               value={form.message}
               onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
               className="p-4 rounded-[14px] border border-[#E7E7E7] bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#111111] resize-none"

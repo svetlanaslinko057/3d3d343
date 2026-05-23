@@ -22,17 +22,17 @@ import StatusBadge from "@/components/shared/StatusBadge";
 const ICONS = { Disc3, Layers, Wrench, Settings2, Sparkles, Truck, Package };
 
 const SLUG_BENEFITS = {
-  "air-springs-sprinter": "Серійна модель з виробництва",
-  "air-suspension-kit-crafter": "Комплект під замовлення",
-  "air-springs-transit": "Балонна серія",
-  "air-suspension-kit-truck": "Партії для вантажівок",
+  "air-springs-serial": "Серійна модель з виробництва",
+  "air-suspension-kit-standard": "Комплект із виробництва",
+  "air-springs-balloon": "Балонна серія",
+  "air-suspension-kit-heavy": "Посилена пара ×2",
   "air-suspension-kit-trailer": "OEM-партії",
   "compressor-12v-3l": "Стандартний компонент",
   "fittings-lines-kit": "Серійний монтажний набір",
   "dual-manometer": "Електронний контроль",
   "installation-kyiv": "Послуга в Києві",
   "custom-solution-special": "Під технічне завдання",
-  "air-springs-passenger": "Балонна серія",
+  "air-springs-compact": "Балонна серія",
   "control-valve-block": "Електропневмо блок",
   "air-suspension-rv": "OEM-серія для кемперів",
 };
@@ -45,7 +45,7 @@ function pickBenefit(p) {
   if (cat === "components") return "Стандартний компонент";
   if (cat === "installation") return "Послуга при замовленні";
   if (cat === "custom-solutions") return "Під ТЗ";
-  if (cat === "by-vehicle") return "Серія під авто";
+  if (cat === "by-vehicle") return "Серія за застосуванням";
   return "Виробництво · Україна";
 }
 

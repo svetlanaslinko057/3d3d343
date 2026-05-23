@@ -58,10 +58,10 @@ const AUDIENCES = [
   },
   {
     icon: Wrench,
-    title: "СТО, флоти та виробники",
-    desc: "Сервіси, парки авто, виробники причепів та спецтехніки.",
+    title: "Інтегратори та виробники",
+    desc: "Сервіси, виробники обладнання, проєктні рішення під ТЗ.",
     bullets: [
-      "Підбір під парк авто",
+      "Підбір під вашу задачу",
       "Накопичувальні знижки",
       "Технічна підтримка від виробника",
     ],
@@ -269,7 +269,7 @@ export function SlideTestimonials({ active }) {
 // ==================================================================
 const STEPS = [
   { icon: MessageSquare, title: "Запит", desc: "Опт/роздріб/OEM" },
-  { icon: Search, title: "Специфікація", desc: "Авто · типорозмір · партія" },
+  { icon: Search, title: "Специфікація", desc: "Типорозмір · обсяг · ТЗ" },
   { icon: Boxes, title: "Прайс і терміни", desc: "Наявність або виготовлення" },
   { icon: CheckCircle2, title: "Відвантаження", desc: "НП · вантажні · експорт" },
 ];
@@ -277,7 +277,7 @@ const STEPS = [
 const CLIENT_TYPES = [
   { value: "Опт", label: "Опт" },
   { value: "OEM", label: "OEM" },
-  { value: "СТО/автомагазин", label: "СТО/автомагазин" },
+  { value: "Інтегратор", label: "Інтегратор" },
   { value: "Виробництво", label: "Виробництво" },
   { value: "Експорт", label: "Експорт" },
   { value: "Роздріб", label: "Роздріб" },
@@ -408,7 +408,7 @@ export function SlideFinal({ active }) {
                 <div className="flex flex-col justify-between min-w-0">
                   <div>
                     <div className="text-[12.5px] lg:text-[13.5px] text-[#BDBDBD] leading-relaxed max-w-md">
-                      Опишіть специфікацію (авто/проєкт або типорозмір подушки) — надішлемо прайс і терміни виготовлення. Або напишіть одразу в зручний месенджер:
+                      Опишіть специфікацію (типорозмір подушки, обсяг або ТЗ) — надішлемо прайс і терміни виготовлення. Або напишіть одразу в зручний месенджер:
                     </div>
                     <div className="mt-4 lg:mt-4 grid sm:grid-cols-2 gap-2.5 lg:gap-2.5">
                       <a href={telegramUrl(settings)} target="_blank" rel="noreferrer" className="group flex items-center gap-3 rounded-[12px] bg-white/5 border border-white/10 p-3 hover:bg-white/10 hover:border-white/25 transition-all duration-300" data-testid="final-cta-telegram-card">
@@ -583,7 +583,7 @@ export function SlideFinal({ active }) {
                               <label className="block text-[11px] font-semibold mb-1.5">Специфікація</label>
                               <input
                                 required
-                                placeholder="Напр. Sprinter 906 / партія балонів RP-2010"
+                                placeholder="Напр. 200×120 / партія балонів RP-2010"
                                 value={form.spec}
                                 onChange={(e) => setForm((f) => ({ ...f, spec: e.target.value }))}
                                 className="h-11 w-full px-3.5 rounded-[10px] border border-[#E7E7E7] bg-white text-[13.5px] focus:outline-none focus:ring-2 focus:ring-[#111111]"

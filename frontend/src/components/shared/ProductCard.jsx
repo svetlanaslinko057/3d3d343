@@ -8,17 +8,17 @@ import { imageUrl } from "@/lib/utils";
 import StatusBadge from "@/components/shared/StatusBadge";
 
 const SLUG_BENEFITS = {
-  "air-springs-sprinter": "Серійна модель · власне виробництво",
-  "air-suspension-kit-crafter": "Комплект під замовлення, термін 5–10 днів",
-  "air-springs-transit": "Балонна серія · власна вулканізація",
-  "air-suspension-kit-truck": "Партії для вантажівок · до 7.5 т",
-  "air-suspension-kit-trailer": "OEM-партії для виробників причепів",
+  "air-springs-serial": "Серійна модель · власне виробництво",
+  "air-suspension-kit-standard": "Комплект із виробництва, термін 5–10 днів",
+  "air-springs-balloon": "Балонна серія · власна вулканізація",
+  "air-suspension-kit-heavy": "Посилена пара · до 3000 кг",
+  "air-suspension-kit-trailer": "OEM-партії для виробників",
   "compressor-12v-3l": "Стандартний компонент серії",
   "fittings-lines-kit": "Серійний монтажний набір",
   "dual-manometer": "Електронний контрольний компонент",
   "installation-kyiv": "Послуга в Києві (опціонально)",
   "custom-solution-special": "Виготовлення під технічне завдання",
-  "air-springs-passenger": "Балонна серія, без зварювання",
+  "air-springs-compact": "Балонна серія, без зварювання",
   "control-valve-block": "Електропневмо блок керування серії",
   "air-suspension-rv": "OEM-серія для кемперів і автодомів",
 };
@@ -32,7 +32,7 @@ function pickBenefit(product) {
   if (cat === "components") return "Стандартний компонент";
   if (cat === "installation") return "Послуга при замовленні";
   if (cat === "custom-solutions") return "Виготовлення під ТЗ";
-  if (cat === "by-vehicle") return "Серія під авто";
+  if (cat === "by-vehicle") return "Серія за застосуванням";
   return "Виробник · Україна";
 }
 
@@ -95,7 +95,7 @@ export function ProductCard({ product }) {
 
         {product.vehicleTypes && product.vehicleTypes.length > 0 ? (
           <div className="mt-3 sm:mt-4 rounded-[12px] sm:rounded-[14px] bg-[#F1F1EF] border border-[#E7E7E7] p-2.5 sm:p-3">
-            <div className="text-[10px] uppercase tracking-[0.12em] font-semibold text-[#666666]">Сумісність</div>
+            <div className="text-[10px] uppercase tracking-[0.12em] font-semibold text-[#666666]">Застосування</div>
             <div className="mt-1.5 flex flex-wrap gap-1.5">
               {product.vehicleTypes.slice(0, 3).map((v) => (
                 <span

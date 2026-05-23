@@ -4,7 +4,7 @@ export const CATEGORY_LABELS = {
   "components": "Комплектуючі",
   "installation": "Встановлення",
   "custom-solutions": "Індивідуальні рішення",
-  "by-vehicle": "За авто",
+  "by-vehicle": "За застосуванням",
 };
 
 export const CATEGORY_LIST = [
@@ -13,18 +13,19 @@ export const CATEGORY_LIST = [
   { value: "components", label: "Комплектуючі" },
   { value: "installation", label: "Встановлення" },
   { value: "custom-solutions", label: "Індивідуальні рішення" },
-  { value: "by-vehicle", label: "За авто" },
+  { value: "by-vehicle", label: "За застосуванням" },
 ];
 
+// Application categories — universal, no specific car brands.
+// Customers decide where to integrate the product.
 export const VEHICLE_TYPES = [
-  "Sprinter",
-  "Crafter",
-  "Transit",
-  "Мікроавтобуси",
-  "Вантажні авто",
-  "Причепи",
-  "Легкові авто",
-  "Спецтехніка",
-  "Camper",
-  "Промисловість",
+  "Серійна продукція",
+  "OEM партії",
+  "Балонна серія",
+  "Посилена серія",
+  "Універсальна",
+  "Великі партії",
+  "Індивідуально під ТЗ",
+  "Промислові застосування",
+  "Експорт",
 ];
